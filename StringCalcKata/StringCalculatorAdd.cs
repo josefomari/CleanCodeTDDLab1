@@ -64,5 +64,17 @@ namespace StringCalcKata
 
             Assert.Equal(expectedMessage, ex.Message);
         }
+
+        [Theory]
+        [InlineData("2000,3,4", 7)]
+        [InlineData("1000,2,3", 1005)]
+        public void ReturnsSumIgnoringNumberOver1000
+            (string numbers, int expectedResult)
+        {
+
+            var result = _calculator.Add(numbers);
+
+            Assert.Equal(expectedResult, result);
+        }
     }
 }
