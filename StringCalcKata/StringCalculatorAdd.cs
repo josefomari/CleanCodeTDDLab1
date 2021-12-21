@@ -17,6 +17,7 @@ namespace StringCalcKata
 
         [Theory]
         [InlineData("1", 1)]
+        [InlineData("1.2", 1.2)]
         public void Returns1GivenStringWith1(string numbers, int expectedResult)
         {
             var calculator = new StringCalculator();
