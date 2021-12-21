@@ -6,9 +6,13 @@ namespace StringCalcKata
     public class StringCalculatorAdd
     {
         [Fact]
-        public void Test1()
+        public void Returns0GivenEmptyString()
         {
+            var calculator = new StringCalculator();
 
+            var result = calculator.Add("");
+
+            Assert.Equal(0, result);
         }
     }
 }

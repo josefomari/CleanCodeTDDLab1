@@ -8,7 +8,7 @@ namespace StringCalcKata
 {
     class StringCalculator
     {
-        int Add (string numbers)
+        public int Add(string numbers)
         {
             return 0;
         }
