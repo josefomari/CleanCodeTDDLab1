@@ -50,5 +50,19 @@ namespace StringCalcKata
 
             Assert.Equal(expectedResult, result);
         }
+
+        [Theory]
+        [InlineData("-1,2", "Negatives not allowed: -1")]
+        [InlineData("-5,-2", "Negatives not allowed: -5,-2")]
+        public void
+           CancelsCalcGivenNegativeInput
+            (string numbers, string expectedMessage)
+        {
+            Action action = () =>_calculator.Add(numbers);
+
+            var ex = Assert.Throws<Exception>(action);
+
+            Assert.Equal(expectedMessage, ex.Message);
+        }
     }
 }
